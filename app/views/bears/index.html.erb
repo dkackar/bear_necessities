@@ -1,0 +1,24 @@
+<div>
+  <h3> Listing all Bears </h3>
+  <table>
+    <tr>
+      <td style="min-width:50px;max-width:100px;"><h5>Bear_Name</h5></td>
+      <td style="min-width:50px;max-width:100px;"><h5>Description</h5></td>
+      <td style="min-width:50px;max-width:100px;"><h5>Edit?</h5></td>
+      <td style="min-width:50px;max-width:100px;"><h5>Delete?</h5></td>
+    </tr>
+    <%@bears.each do |bear|%>
+      <tr>
+        <td style="min-width:50px;max-width:100px;"> <%=bear.name%></td>
+        <td style="min-width:50px;max-width:100px;"> <%=bear.description%><td>
+        <td style="min-width:50px;max-width:100px;">
+          <%=link_to "Edit Bear", edit_bear_path(bear.id)%>
+        </td>
+        <td style="min-width:50px;max-width:100px;">
+          <%=link_to "Delete Bear", bear_path(bear.id), method: :delete, data: { confirm: "Are you sure?" }%>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%=link_to "New Bear", new_bear_path%>
+</div>

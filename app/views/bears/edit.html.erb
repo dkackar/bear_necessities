@@ -1,0 +1,10 @@
+<h3> Edit Bear </hr>
+<div>
+  <p>
+    Bear No: <%= @bear.id%>
+    <form action="/bears/<%=@bear.id%>" method="post">
+      <input type="hidden" value="patch" name="_method">
+      <%= render partial: "form" %>
+    </form>
+  </p>
+</div>

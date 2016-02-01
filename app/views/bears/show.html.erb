@@ -1,0 +1,17 @@
+<div>
+  <h3> Bear Information </h3>
+  <table>
+    <tr>
+      <td> Bear Name:</td>
+      <td> <%=@bear.name%></td>
+    </tr>
+    <tr>
+      <td> Description: </td>
+      <td><%=@bear.description%></td>
+    </tr>
+  </table>
+
+  <p>
+   <%=link_to "Edit Bear", edit_bear_path(@bear.id)%> | <%=link_to "Delete Bear", @bear, method: :delete, data: { confirm: "Are you sure?" }%>
+  </p>
+</div>
